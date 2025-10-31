@@ -1,0 +1,370 @@
+:root {
+  color-scheme: light dark;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #0f172a;
+  color: #f8fafc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  background: radial-gradient(circle at top left, rgba(59, 130, 246, 0.25), transparent 40%),
+    radial-gradient(circle at bottom right, rgba(236, 72, 153, 0.2), transparent 40%),
+    #0f172a;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}
+
+.chat-shell {
+  width: min(1200px, 92vw);
+  margin: 32px auto;
+  background: rgba(15, 23, 42, 0.78);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 40px 120px rgba(15, 23, 42, 0.45);
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+}
+
+.chat-header h1 {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.chat-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.message-board {
+  max-height: 65vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-right: 8px;
+}
+
+.message {
+  display: flex;
+  gap: 12px;
+}
+
+.message.user {
+  justify-content: flex-end;
+}
+
+.message-bubble {
+  padding: 14px 18px;
+  border-radius: 16px;
+  max-width: 70%;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+.message.user .message-bubble {
+  background: rgba(59, 130, 246, 0.2);
+  border: 1px solid rgba(59, 130, 246, 0.4);
+}
+
+.message.assistant .message-bubble {
+  background: rgba(30, 41, 59, 0.85);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.product-card {
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 18px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(79, 70, 229, 0.8);
+}
+
+.product-thumbnail {
+  width: 100%;
+  height: 180px;
+  border-radius: 14px;
+  object-fit: cover;
+}
+
+.product-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: rgba(226, 232, 240, 0.85);
+}
+
+.product-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.product-actions button,
+.product-actions a {
+  flex: 1 1 auto;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: background 0.2s ease;
+}
+
+.product-actions a {
+  text-decoration: none;
+  background: rgba(56, 189, 248, 0.15);
+  border: 1px solid rgba(56, 189, 248, 0.45);
+}
+
+.product-actions button.like {
+  background: rgba(236, 72, 153, 0.18);
+  border: 1px solid rgba(236, 72, 153, 0.32);
+  color: #f472b6;
+}
+
+.product-actions button.dislike {
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  color: #fca5a5;
+}
+
+.product-actions button.save {
+  background: rgba(167, 139, 250, 0.18);
+  border: 1px solid rgba(129, 140, 248, 0.35);
+  color: #c4b5fd;
+}
+
+.product-actions button.try-on {
+  background: rgba(59, 130, 246, 0.18);
+  border: 1px solid rgba(59, 130, 246, 0.4);
+  color: #93c5fd;
+}
+
+.wishlist-panel {
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 18px;
+  padding: 18px;
+  max-height: 65vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.wishlist-panel h3 {
+  margin: 0;
+}
+
+.wishlist-item {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-size: 0.85rem;
+}
+
+.wishlist-item img {
+  width: 52px;
+  height: 52px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.message-input {
+  margin-top: 24px;
+  border-top: 1px solid rgba(148, 163, 184, 0.15);
+  padding-top: 16px;
+  display: flex;
+  gap: 12px;
+}
+
+.message-input textarea {
+  flex: 1;
+  resize: none;
+  min-height: 68px;
+  border-radius: 16px;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  background: rgba(15, 23, 42, 0.9);
+  color: #f8fafc;
+  padding: 12px;
+  font-size: 1rem;
+}
+
+.message-input button {
+  min-width: 140px;
+  border-radius: 16px;
+  border: none;
+  background: linear-gradient(120deg, rgba(59, 130, 246, 0.85), rgba(236, 72, 153, 0.7));
+  color: #f8fafc;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.message-input button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(59, 130, 246, 0.25);
+}
+
+.suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.suggestions button {
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  background: rgba(74, 222, 128, 0.08);
+  color: #bbf7d0;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.recap-card {
+  background: rgba(30, 41, 59, 0.75);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.try-on-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  padding: 24px;
+  z-index: 40;
+}
+
+.try-on-modal {
+  background: rgba(15, 23, 42, 0.95);
+  border-radius: 20px;
+  padding: 24px;
+  max-width: 520px;
+  width: 100%;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.try-on-modal h2 {
+  margin-top: 0;
+}
+
+.avatar-selector {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 12px;
+}
+
+.avatar-option {
+  background: rgba(148, 163, 184, 0.08);
+  padding: 12px;
+  border-radius: 14px;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.avatar-option.active {
+  border-color: rgba(59, 130, 246, 0.6);
+  background: rgba(59, 130, 246, 0.12);
+}
+
+.try-on-preview {
+  margin-top: 16px;
+  background: rgba(30, 41, 59, 0.7);
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+.try-on-preview img {
+  max-width: 100%;
+  border-radius: 12px;
+}
+
+.try-on-actions {
+  margin-top: 18px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.try-on-actions button {
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  background: rgba(148, 163, 184, 0.12);
+  color: rgba(226, 232, 240, 0.95);
+  padding: 8px 14px;
+  cursor: pointer;
+}
+
+@media (max-width: 960px) {
+  .chat-content {
+    grid-template-columns: 1fr;
+  }
+
+  .wishlist-panel {
+    order: -1;
+    max-height: none;
+  }
+
+  .message-board {
+    max-height: none;
+  }
+}
